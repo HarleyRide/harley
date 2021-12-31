@@ -1,6 +1,9 @@
 
 import './App.css';
 
+let a = input.value;
+console.log(a);
+
 function App() {
   return (
     <div className="App">
@@ -20,7 +23,8 @@ function App() {
       </header>
       <section>
         <input id='year' type='number'/>
-        <input type='button' onClick={document.getElementById('year').value==2000}></input>
+        <div><input type='button' onClick={document.getElementById('year').value===2000}></input></div>
+        
         
       </section>
     </div>

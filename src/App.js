@@ -1,14 +1,24 @@
 
 import React, {useState, memo, useCallback} from 'react';
 import './App.css';
+import Evolution from './components/Evolution';
+import Twincam from './components/Twincam';
+import Shovelhead from './components/Shovelhead';
 
 function YearDiapasons(props) {
   const {year} = props;
   return (
     <div>
-      {year >= 1903 && year <= 1930 && <div>old</div>}
-      {year > 1930 && year <= 1950 && <div>modern</div>}
-      {year > 1950 && <div>future</div>}
+      {year >= 1903 && year <= 1905 && <div>F-Head</div>}
+      {year > 1914 && year <= 1929 && <div>F-head</div>}
+      {year > 1930 && year <= 1948 && <div>Flathead</div>}
+      {year > 1936 && year <= 1947 && <div>Knucklehead</div>}
+      {year > 1948 && year <= 1965 && <div>Panhead</div>}
+      {year > 1966 && year <= 1984 && <div><Shovelhead /></div>}
+      {year >= 1985 && year <= 1999 && <div><Evolution/></div>}
+      {year > 1999 && year <= 2017 && <div><Twincam/></div>}
+      {year > 2017 && year <= 2022 && <div>Milwaukee-Eight</div>}
+
     </div>
   );
 }
@@ -69,7 +79,6 @@ const Year = memo(function (props) {
   console.log('year render');
   return (
     <div>
-      <input type='text' value={message} onChange={onMessageChange}/>
       <input id='year' type='number' value={year} onChange={onYearChange}/>
     </div>
   );
@@ -79,7 +88,7 @@ const Month = memo(function(props) {
   const {month, onMonthChange} = props;
   console.log('month render');
   return (<div>
-    <input id='year' type='number' value={month} onChange={onMonthChange}/>
+    {/* <input id='year' type='number' value={month} onChange={onMonthChange}/> */}
   </div>);
 });
 

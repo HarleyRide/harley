@@ -79,7 +79,7 @@ const Year = memo(function (props) {
   console.log('year render');
   return (
     <div>
-      <input id='year' type='number' value={year} onChange={onYearChange}/>
+      <input id='year' type='number' title='Введите год выпуска мотоцикла' value={year} onChange={onYearChange}/>
     </div>
   );
 });

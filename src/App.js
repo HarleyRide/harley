@@ -59,17 +59,11 @@ function YearDiapasons(props) {
 
 function App() {
   const [year, setYear] = useState(1903);
-  const [month, setMonth] = useState(1);
   const [isInfoHidden, setIsInfoHidden] = useState(true);
 
   const onYearChange = useCallback(function (event) {
     const { value } = event.target;
     setYear(value);
-  }, []);
-
-  const onMonthChange = useCallback(function (event) {
-    const { value } = event.target;
-    setMonth(value);
   }, []);
 
   function onShow() {
@@ -83,13 +77,12 @@ function App() {
 
     <div className="App">
       <header>
-        <img src="https://www.bikerwiki.ru/images/thumb/f/f1/Harley-davidson-logo-21.jpg/700px-Harley-davidson-logo-21.jpg" alt='harley-logo'/>
+        <img src="https://www.bikerwiki.ru/images/thumb/f/f1/Harley-davidson-logo-21.jpg/700px-Harley-davidson-logo-21.jpg" alt='harley-logo' />
 
       </header>
       <section className='App-header'>
 
         <Year year={year} onYearChange={onYearChange} />
-        <Month month={month} onMonthChange={onMonthChange}></Month>
         <div>
           <button onClick={onShow}>Show</button>
           <button onClick={onHide}>Hide</button>
@@ -103,27 +96,15 @@ function App() {
 }
 
 const Year = memo(function (props) {
-  const [message, setMessage] = useState('fuck');
   const { year, onYearChange } = props;
-
-  function onMessageChange(event) {
-    setMessage(event.target.value);
-  }
-
   console.log('year render');
   return (
-    <><span>Введите год выпуска мотоцикла для получения характеристик двигателя и модели</span>
+    <>  <span>
+      Введите год выпуска мотоцикла для получения характеристик двигателя и модели
+    </span>
       <input id='year' type='number' title='Введите год выпуска мотоцикла' value={year} onChange={onYearChange} />
     </>
   );
-});
-
-const Month = memo(function (props) {
-  const { month, onMonthChange } = props;
-  console.log('month render');
-  return (<div>
-    {/* <input id='year' type='number' value={month} onChange={onMonthChange}/> */}
-  </div>);
 });
 
 export default App;

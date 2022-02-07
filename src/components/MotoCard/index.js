@@ -3,14 +3,14 @@ import React from 'react';
 export default function MotoCard(props) {
     return <div>
 
-        <div id='componentHeader'>
-            <h1 >{props.headerText}</h1>
+        <div>
+            <h1 className='component-header'>{props.headerText}</h1>
         </div>
 
         <div>
-            <img id='component-image' src={props.imgSrc} alt={'motoImg'} />
+            <img className='component-image' src={props.imgSrc} alt={'motoImg'} />
         </div>
-        <div id='content'>
+        <div className='content'>
             {props.content}
         </div>
 

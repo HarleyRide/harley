@@ -1,7 +1,10 @@
-#comonentHeader{
+.component-header{
    color: aqua;
 }
 
-#content{
+.component-image{
+width: 50vw;
+}
+.content{
     color: aqua;
 }

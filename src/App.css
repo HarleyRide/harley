@@ -38,3 +38,19 @@
     transform: rotate(360deg);
   }
 }
+
+.header-logo {
+  width: 50vw;
+  
+}
+.header-logo-background{
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  font-size: larger;
+}
+.footer{
+  background-color: coral;
+}

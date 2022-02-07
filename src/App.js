@@ -1,7 +1,6 @@
 
 import React, { useState, memo, useCallback } from 'react';
 import './App.css';
-import Shovelhead from './components/Shovelhead';
 import MotoCard from './components/MotoCard/index'
 
 function YearDiapasons(props) {
@@ -27,7 +26,9 @@ function YearDiapasons(props) {
         коробка передач – двухходовая, четырехступенчатая. </div>} />
       </div>}
       {year > 1948 && year <= 1965 && <div><MotoCard headerText='Panhead engine' imgSrc='https://www.yesterdays.nl/site/wp-content/uploads/2017/04/Harley-Davidson-1949-49EL-Panhead-1.jpg' content={<div>Название Panhead произошло от формы крышки голов цилиндров, «pan» переводится как чашка, таз или кастрюля. Если вы посмотрите на двигатель, то легко поймете почему он так назван. Производился с 1948 по 1965 и был заменен Shovel`ом. Pan пришел на замену Knucklehead и изменения касались верхней половины двигателя: дизайн голов цилиндров, самих цилиндров, новая поршневая, улучшенное смазывание (маслонасос стал более производительным, магистрали спрятали внутрь) и меньший расход топлива. «Нижний конец», т.е. картер и коленвал, остались без серьезных изменений, разве что переделали распредвал. Крупным нововведением было появление гидрокомпенсаторов клапанных зазоров. Также двигатель был более холодным при работе и полегчал на 8lbs или 3.6 кг. Раму вытянули, чтобы вместить более высокий двигатель, она получила название «wishbone» из-за согнутых нижних труб. 1948 — единственный год, когда крышки голов цилиндров были хроминованными, далее пошли крышки из нержавейки. Первые Pan имели примерно ту же мощность что и Knuckle — около 50 л/с @ 4800 об/мин при объеме 74″.</div>} /></div>}
-      {year > 1966 && year <= 1984 && <div><Shovelhead /></div>}
+      {year > 1966 && year <= 1984 && <div><MotoCard headerText="Shovelhead engine" imgSrc="https://i.pinimg.com/originals/aa/13/39/aa133988b3a292182ee3f47166200387.jpg" content={<div>В 70-х Harley-Davidson переживала кризис, как и многие компании в США… И если бы не общая обстановка, может быть, история моторов Shovelhead была бы повеселее. Но уж какая была. Главное — Харлей выстоял!
+
+… К 1966 году в связи с утяжелением мотоциклов, оборудованных электростартером и задней подвеской, назрела необходимость в более мощном моторе. Таким стал Shovelhead 74 — V-twin с 45-градусным развалом цилиндров объемом 1208 куб.см, выпускавшийся до 1983 года. Он был на 10% более мощным, чем Panhead, на смену которому пришел. Появление Shovelhead первые годы повысило продажи мотоциклов H-D на 26% — до 36 310 штук в год.</div>} /></div>}
       {year >= 1985 && year <= 1999 && <div><MotoCard headerText='Evolution engines' imgSrc='https://www.moto-pro.net/wp-content/uploads/2020/11/Harley-Davidson-Heritage-Softail-Springer-EVO-1999.jpg' content={<div>
         Характеристики:
         <ul>
@@ -76,8 +77,8 @@ function App() {
   return (
 
     <div className="App">
-      <header>
-        <img src="https://www.bikerwiki.ru/images/thumb/f/f1/Harley-davidson-logo-21.jpg/700px-Harley-davidson-logo-21.jpg" alt='harley-logo' />
+      <header className='header-logo-background'>
+        <img className='header-logo' src="https://www.bikerwiki.ru/images/thumb/f/f1/Harley-davidson-logo-21.jpg/700px-Harley-davidson-logo-21.jpg" alt='harley-logo' />
 
       </header>
       <section className='App-header'>
@@ -90,6 +91,11 @@ function App() {
         {!isInfoHidden && <YearDiapasons year={year} />}
 
 
+      </section>
+      <section className='footer'>
+        {/* <div><a>Контакты</a></div> */}
+        <div><a href='https://www.harley-davidson.com/eu/en/index.html'>Официальная страничка Харли</a></div>
+       
       </section>
     </div>
   );

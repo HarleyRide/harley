@@ -1,23 +1,57 @@
 
-import React, {useState, memo, useCallback} from 'react';
+import React, { useState, memo, useCallback } from 'react';
 import './App.css';
-import Evolution from './components/Evolution';
-import Twincam from './components/Twincam';
 import Shovelhead from './components/Shovelhead';
+import MotoCard from './components/MotoCard/index'
 
 function YearDiapasons(props) {
-  const {year} = props;
+  const { year } = props;
   return (
     <div>
-      {year >= 1903 && year <= 1905 && <div>F-Head</div>}
-      {year > 1914 && year <= 1929 && <div>F-head</div>}
-      {year > 1930 && year <= 1948 && <div>Flathead</div>}
-      {year > 1936 && year <= 1947 && <div>Knucklehead</div>}
-      {year > 1948 && year <= 1965 && <div>Panhead</div>}
+      {year >= 1903 && year <= 1929 && <div><MotoCard headerText='F-head engine' imgSrc='https://silodrome.com/wp-content/uploads/2016/10/Harley-Davidson-Big-Twins-%E2%80%93-The-F-head-5a-HD-hires.jpg' /></div>}
+      {year > 1930 && year <= 1948 && <div><MotoCard headerText='Flathead engine' imgSrc='https://cdn1.mecum.com/auctions/lv0117/lv0117-263046/images/lv0117-263046_3@2x.jpg?1480448682000' /></div>}
+      {year > 1936 && year <= 1947 && <div><MotoCard headerText='Knucklehead engine' imgSrc='https://cdn1.mecum.com/auctions/ca0818/ca0818-330934/images/monahan-1938-hd-el-1531834407345@2x.jpg?1535042433000' content={<div>двигатель – двухцилиндровый,
+        двухтактный. Объем – 350 см3;
+        сухой вес – 170 кг;
+        объем топливного бака – 15 л;
+        максимальная грузоподъемность – 165 кг;
+        мощность двигателя – 35 лошадиных сил;
+        тип системы охлаждения – воздушный;
+        трансмиссия – четырехступенчатая;
+        скорость – 150 км/час;
+        расход- 7 л на 100 км;
+        ход поршня – 98 мм;
+        кол-во цилиндров – 2;
+        сжатие – 7,3;
+        тип коле – съемные;
+        коробка передач – двухходовая, четырехступенчатая. </div>} />
+      </div>}
+      {year > 1948 && year <= 1965 && <div><MotoCard headerText='Panhead engine' imgSrc='https://www.yesterdays.nl/site/wp-content/uploads/2017/04/Harley-Davidson-1949-49EL-Panhead-1.jpg' content={<div>Название Panhead произошло от формы крышки голов цилиндров, «pan» переводится как чашка, таз или кастрюля. Если вы посмотрите на двигатель, то легко поймете почему он так назван. Производился с 1948 по 1965 и был заменен Shovel`ом. Pan пришел на замену Knucklehead и изменения касались верхней половины двигателя: дизайн голов цилиндров, самих цилиндров, новая поршневая, улучшенное смазывание (маслонасос стал более производительным, магистрали спрятали внутрь) и меньший расход топлива. «Нижний конец», т.е. картер и коленвал, остались без серьезных изменений, разве что переделали распредвал. Крупным нововведением было появление гидрокомпенсаторов клапанных зазоров. Также двигатель был более холодным при работе и полегчал на 8lbs или 3.6 кг. Раму вытянули, чтобы вместить более высокий двигатель, она получила название «wishbone» из-за согнутых нижних труб. 1948 — единственный год, когда крышки голов цилиндров были хроминованными, далее пошли крышки из нержавейки. Первые Pan имели примерно ту же мощность что и Knuckle — около 50 л/с @ 4800 об/мин при объеме 74″.</div>} /></div>}
       {year > 1966 && year <= 1984 && <div><Shovelhead /></div>}
-      {year >= 1985 && year <= 1999 && <div><Evolution/></div>}
-      {year > 1999 && year <= 2017 && <div><Twincam/></div>}
-      {year > 2017 && year <= 2022 && <div>Milwaukee-Eight</div>}
+      {year >= 1985 && year <= 1999 && <div><MotoCard headerText='Evolution engines' imgSrc='https://www.moto-pro.net/wp-content/uploads/2020/11/Harley-Davidson-Heritage-Softail-Springer-EVO-1999.jpg' content={<div>
+        Характеристики:
+        <ul>
+          <ol>угол развала цилиндров 45°</ol>
+          <ol>объем — 81.8″ или 1340сс</ol>
+          <ol>степень сжатия — 8.5:1 (у Shovel FL: 7.25:1, FLH: 8:1)</ol>
+          <ol>мощность — 70 л/с @ 5000 об/мин</ol>
+          <ol>крутящий момент — 99 н/м @ 2350 об/мин</ol>
+          <ol>2 клапана на цилиндр, OHV</ol>
+          <ol>переработанная форма камеры сгорания и каналов впуска-выпуска</ol>
+          <ol>новое зажигание</ol>
+          <ol>переделанная система смазки</ol>
+        </ul>
+      </div>} />
+      </div>}
+      {year > 1999 && year <= 2017 && <div><MotoCard headerText='TwinCam' imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi1STv7oYV2duS414wKbxUyUCrdQf0zxShp3PoLm9g2CQbXlSJ8azmFOLIirSWgzqvfeM&usqp=CAU" content={<div>
+        Я вам не скажу за всю Одессу весь Милуоки, но помимо теории заговора производителей, которым надо вытаскивать как можно больше денег из кармана потребителя, были и более объективные причины: конкуренция с японскими и европейскими производителями, выпускавшими на тот момент уже более объемные и мощные двигатели; необходимость соответствовать ужесточившимся экологическим требованиям и нормам по шумности и т.п. Кроме того, сами владельцы Харли часто переделывали свои Эво в погоне за большей мощностью, т.е. потребность в ней очевидно была. Да и моторы Evo не были такими идеальными, как хотелось бы: у них были проблемы со смазкой, подтеканием масла и другие.
+
+        Однако я не буду затевать вечный спор «олдскулеров»-любителей самостоятельно перебирать двигатели в своем гараже (за что особенно любили Evo — за простоту сборки-разборки) и «ненастоящих» мотоциклистов, предпочитающих только ездить, а «саночки чинить» отдавать в сервис. Каждому свое! Поэтому вернусь к истории.
+
+        Уже в 1992-м году назрела необходимость в увеличении мощности мотора: в Harley-Davidson видели, что делают в этой области тюнинговые компании и отдельные пользователи. Начались работы над новым двигателем c кодом Р-22, который впоследствие стал «Твин Камом». Это был новый двигатель, выполненный в старых традициях: 45-градусный верхнеклапанный V-twin с воздушным охлаждением.
+
+      </div>} /></div>}
+      {year > 2017 && year <= 2022 && <div><MotoCard headerText='Milwaukee-Eight' imgSrc='https://www.moto-pro.net/wp-content/uploads/2020/11/Harley-Davidson-Fat-Boy-Anniversary-115-M8-2018.jpg' /></div>}
 
     </div>
   );
@@ -29,12 +63,12 @@ function App() {
   const [isInfoHidden, setIsInfoHidden] = useState(true);
 
   const onYearChange = useCallback(function (event) {
-    const {value} = event.target;
+    const { value } = event.target;
     setYear(value);
   }, []);
 
   const onMonthChange = useCallback(function (event) {
-    const {value} = event.target;
+    const { value } = event.target;
     setMonth(value);
   }, []);
 
@@ -46,23 +80,23 @@ function App() {
   }
 
   return (
-    
-    <div className="App">
-     <header>
-     <img src="data:image/jpeg;base64,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" />
 
-     </header>
+    <div className="App">
+      <header>
+        <img src="https://www.bikerwiki.ru/images/thumb/f/f1/Harley-davidson-logo-21.jpg/700px-Harley-davidson-logo-21.jpg" alt='harley-logo'/>
+
+      </header>
       <section className='App-header'>
-     
-        <Year year={year} onYearChange={onYearChange}/>
+
+        <Year year={year} onYearChange={onYearChange} />
         <Month month={month} onMonthChange={onMonthChange}></Month>
         <div>
           <button onClick={onShow}>Show</button>
           <button onClick={onHide}>Hide</button>
         </div>
-        {!isInfoHidden && <YearDiapasons year={year}/>}
-        
-        
+        {!isInfoHidden && <YearDiapasons year={year} />}
+
+
       </section>
     </div>
   );
@@ -70,7 +104,7 @@ function App() {
 
 const Year = memo(function (props) {
   const [message, setMessage] = useState('fuck');
-  const {year, onYearChange} = props;
+  const { year, onYearChange } = props;
 
   function onMessageChange(event) {
     setMessage(event.target.value);
@@ -78,14 +112,14 @@ const Year = memo(function (props) {
 
   console.log('year render');
   return (
-    <div>
-      <input id='year' type='number' title='Введите год выпуска мотоцикла' value={year} onChange={onYearChange}/>
-    </div>
+    <><span>Введите год выпуска мотоцикла для получения характеристик двигателя и модели</span>
+      <input id='year' type='number' title='Введите год выпуска мотоцикла' value={year} onChange={onYearChange} />
+    </>
   );
 });
 
-const Month = memo(function(props) {
-  const {month, onMonthChange} = props;
+const Month = memo(function (props) {
+  const { month, onMonthChange } = props;
   console.log('month render');
   return (<div>
     {/* <input id='year' type='number' value={month} onChange={onMonthChange}/> */}

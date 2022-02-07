@@ -1,3 +1,5 @@
+@import './components/MotoCard/index.css';
+
 .App {
   text-align: center;
 }

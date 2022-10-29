@@ -85,8 +85,8 @@ function App() {
 
         <Year year={year} onYearChange={onYearChange} />
         <div>
-          <button onClick={onShow}>Show</button>
-          <button onClick={onHide}>Hide</button>
+          <button id='but1' onClick={onShow}>Show</button>
+          <button id='but2' onClick={onHide}>Hide</button>
         </div>
         {!isInfoHidden && <YearDiapasons year={year} />}
 
@@ -95,7 +95,6 @@ function App() {
       <section className='footer'>
         {/* <div><a>Контакты</a></div> */}
         <div><a href='https://www.harley-davidson.com/eu/en/index.html'>Официальная страничка Харли</a></div>
-       
       </section>
     </div>
   );
@@ -105,7 +104,7 @@ const Year = memo(function (props) {
   const { year, onYearChange } = props;
   console.log('year render');
   return (
-    <>  <span>
+    <>  <span id='instruction'>
       Введите год выпуска мотоцикла для получения характеристик двигателя и модели
     </span>
       <input id='year' type='number' title='Введите год выпуска мотоцикла' value={year} onChange={onYearChange} />

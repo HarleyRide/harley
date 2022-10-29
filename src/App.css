@@ -40,8 +40,7 @@
 }
 
 .header-logo {
-  width: 50vw;
-  
+  width: 50vw; 
 }
 .header-logo-background{
   background-color: white;
@@ -53,4 +52,40 @@ a {
 }
 .footer{
   background-color: coral;
+}
+
+#but1 {
+  color:orangered;
+  background-color: rgb(31, 25, 80);
+  border-radius: 12px;
+}
+
+#but2 {
+  color:orangered;
+  background-color: rgb(31, 25, 80);
+  border-radius: 12px;
+  
+}
+
+#year {
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+#year:hover {
+  background-color: bisque;
+
+}
+#but1:hover {
+  background-color: #fff;
+  color: black;
+}
+
+#but2:hover {
+  background-color: #fff;
+  color: black;
+}
+#instruction {
+  font-family: sans-serif;
+  font-weight: 600;
 }
